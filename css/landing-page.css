@@ -26,6 +26,11 @@ body, h1, h2, h3, h4, h5, h6 {
   border-radius: 10px;
   padding: 5px 17px;
 }
+
+.disable-zoom-in {
+  touch-action: manipulation;
+}
+
 .faq-page {
   background: url(../img/faq_page_background.png);
   background-size: cover;
@@ -237,7 +242,8 @@ footer {
   font-size: 15px;
   display:flex; 
   flex-direction:row; 
-  align-items: center
+  align-items: center;
+  touch-action: manipulation;
 }
 .plus-button{
   margin-left: auto;
