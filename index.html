@@ -68,22 +68,26 @@
     </div>
   </nav>
 
+
+
+
   <!-- Header -->
   <header class="intro-header">
     <div class="intro-box-container">
       <div class="col intro-message intro-box col-lg-6 col-md-12 col-sm-12 col-xs-12">
         <div class="col">
-          <h3 style="margin-top: 10px; padding-bottom: 20px;">Convert your music into NFTs on Ethereum Layer 2 and sell it to fans or license
+          <h3 style="margin-top: 10px; padding-bottom: 20px;">Convert your music into NFTs on Ethereum Layer 2 and sell
+            it to fans or license
             it to creators all over the world. </h3>
-          <p style="margin-top: 10px; font-size: 20px;">Enter your email address for our early access program and newsletter</p>
+          <p style="margin-top: 10px; font-size: 20px;">Enter your email address for our early access program and
+            newsletter</p>
 
           <!-- Google forms -->
-          <form class="example" name="gform" id="gform"
-            action="https://docs.google.com/forms/d/e/1FAIpQLScq3VTIfJIR4vmkfEnaCzbYlwgNBEuZT0PNhDbxUeirB0iXlA/formResponse?"
-            target="hidden_iframe" onsubmit="submitted=true;">
-              <input type="email" name="entry.97899463"
-                id="entry.97899463" placeholder="Enter your email here" required>
-            <button class="search-bar-button" id="submitBtn" type="submit" >Submit</button>
+          <form class="example" name="gform" id="gform" target="hidden_iframe" 
+          action="https://docs.google.com/forms/d/e/1FAIpQLScq3VTIfJIR4vmkfEnaCzbYlwgNBEuZT0PNhDbxUeirB0iXlA/formResponse?"
+          onsubmit="submitted=true;">
+            <input type="email" name="entry.97899463" id="entry.97899463" placeholder="Enter your email here" required>
+            <button class="search-bar-button" id="submitBtn" type="submit">Submit</button>
           </form>
           <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {}"></iframe>
         </div>
@@ -98,43 +102,57 @@
   <script type="text/javascript">var submitted = false;</script>
   <script type="text/javascript">
     $('#gform').on('submit', function (e) {
-      // $('#submitBtn*').hide()
-      $('#gform *').hide()
-      $('#gform').prepend('Thanks for signing up!');
+      var $button = $('#submitBtn');
+      $button.toggleClass('search-bar-button');
+      if ($button.hasClass('.search-bar-button')) {
+        $button.text('Submit');
+      } else {
+        $button.prop('disabled', true);
+        $button.text('Submitted!');
+      }
+
     })</script>
 
-  <section class="platform-header" id="platform">
 
-    <div class="container">
-      <div style="font-size:38px; padding-top: 200px; font-weight: bold;">Overview</div>
-    </div>
+  <script>
+    $(function () {
+      var navMain = $(".navbar-collapse"); // avoid dependency on #id
+      // "a:not([data-toggle])" - to avoid issues caused
+      // when you have dropdown inside navbar
+      navMain.on("click", "a:not([data-toggle])", null, function () {
+        navMain.collapse('hide');
+      });
+    });
+  </script>
+  <div class="platform-header" id="platform">
 
+    <div class="section-title">Overview</div>
+    <!-- <div class="container platform-header" id="platform"> -->
 
-
-    <div class="row" style="padding: 50px; padding-bottom: 150px;">
+    <div class="row" style="padding-inline: 50px; padding-bottom: 150px;">
       <div class="col">
         <img src="img/setting_bg.png" width="250px">
 
-        <p>NFT Engine</p>
+        <p class="overview-section-title">NFT Engine</p>
         <p style="font-size: 15px;">We make it easier and cheaper than ever to convert your songs and albums into NFTs.
         </p>
 
       </div>
       <div class="col">
         <img src="img/license_hub_bg.png" width="250px">
-        <p>License Hub</p>
+        <p class="overview-section-title">License Hub</p>
         <p style="font-size: 15px;">Create, sell, manage and buy different music license agreements to creators and
           other artists around the world. These license agreements will be stored on the Blockchain. </p>
       </div>
       <div class="col">
         <img src="img/eth_bg.png" width="250px">
-        <p>Marketplace</p>
+        <p class="overview-section-title">Marketplace</p>
         <p style="font-size: 15px;">Buy and sell your favorite songs, albums, concert tickets, and other merchandise in
           NFT form. </p>
       </div>
       <div class="col">
         <img src="img/connect_bg.png" width="250px">
-        <p>Creator Connect</p>
+        <p class="overview-section-title">Creator Connect</p>
         <p style="margin-top: -15px; font-size: 10px;">(Coming soon)</p>
         <p style="font-size: 15px;">Dubbed the “Linkedin for Music Artists”, Creator Connect will allow users to
           assemble
@@ -142,7 +160,7 @@
       </div>
       <div class="col">
         <img src="img/headphone_bg.png" width="250px">
-        <p>Music Incubator</p>
+        <p class="overview-section-title">Music Incubator</p>
         <p style="margin-top: -15px; font-size: 10px;">(Coming soon)</p>
         <p style="font-size: 15px;">Our vision is to open an incubation space where artists can record, collaborate on,
           and create music with industry-standard studio equipment at Compose Studios across the United States. In
@@ -152,16 +170,18 @@
 
     </div>
 
-  </section>
+  </div>
 
   <div class="timeline-section" id="roadmap">
-    <div
+    <!-- <div
       style="font-size:38px; padding-top: 100px; padding-bottom: 30px; color:white; text-align: center; font-weight: bold;">
-      Roadmap</div>
-    <div
+      Roadmap</div> -->
+    <div class="section-title">Roadmap</div>
+    <!-- <div
       style="font-size:20px; margin-top: 10px; padding-bottom: 50px; color:white; text-align: center; padding-inline: 20px">
       ComposeNFT
-      Roadmap for 2022 and 2023</div>
+      Roadmap for 2022 and 2023</div> -->
+    <div class="section-subtitle"> ComposeNFT Roadmap for 2022 and 2023</div>
     <div class="timeline-test">
       <div class="date-container-test right-test">
         <p style="font-size: 21px;">
@@ -177,7 +197,8 @@
             </div>
           </div>
           <div class="timeline-text">
-            We are inviting a select group of 10 talented artists to beta test our platform. We will be gifting these initial artists specialized NFTs that represent free membership on our platform. 
+            We are inviting a select group of 10 talented artists to beta test our platform. We will be gifting these
+            initial artists specialized NFTs that represent free membership on our platform.
           </div>
         </div>
       </div>
@@ -186,14 +207,14 @@
       </div>
       <div class="container-test right-test">
         <div class="content-test">
-          <div class="content-title-right">
+          <div class="content-title-right composenft-ga">
             <div class="timeline-title-container">
               <p style="font-size:20px; margin:0px; padding: 8px; ">ComposeNFT GA</p>
             </div>
             <img class="right-timeline-icon" src="img/general_public_icon.png" width="90px"></img>
           </div>
           <div class="timeline-text">
-            ComposeNFT V.1 will go live, users will be able to utilize our NFT Engine, License Hub, and Marketplace. 
+            ComposeNFT V.1 will go live, users will be able to utilize our NFT Engine, License Hub, and Marketplace.
           </div>
         </div>
       </div>
@@ -202,15 +223,17 @@
       </div>
       <div class="container-test left-test">
         <div class="content-test">
-          <div class="content-title">
+          <div class="content-title creator-connect">
             <img class="left-timeline-icon" src="img/creator_connect_icon.png" width="125px"></img>
             <div class="timeline-title-container">
-              <!-- <p style="font-size:20px">Creator Connect</p> -->
               <p style="font-size:20px; margin:0px; padding: 8px;">Creator Connect</p>
             </div>
           </div>
           <div class="timeline-text">
-            ComposeNFT V.1.2 will bring the addition of the Creator Connect to the platform. 
+            Dubbed the “Linkedin for Music Artists”, Creator Connect will allow users to assemble a dream team of sound
+            engineers, producers, and artists to collaborate and create with
+            <br></br>
+            ComposeNFT V.1.2 will bring the addition of the Creator Connect to the platform.
           </div>
         </div>
       </div>
@@ -227,19 +250,20 @@
           </div>
           <div class="timeline-text">
 
-            We hope to open our first Compose studio in Los Angeles, California, and expand to major cities across the United States. 
+            We hope to open our first Compose studio in Los Angeles, California, and expand to major cities across the
+            United States.
             <br></br>
 
 
             <div>
-              Our Vision of ComposeNFT Studio
+              Our Vision for ComposeNFT Studio
               <ul>
                 <li>
-                  Best-in-Class Recording Booths & Equipments.
+                  Best-in-Class Recording Booths & Equipment.
                 </li>
                 <li>
-                  Stages Sets & Live Stream Equipment for Artist to go Perform
-                  Live Streamed Concerts for fans around the World.
+                  Stages Sets & Live Stream Equipment for Artists to perform
+                  live streamed concerts for fans around the World.
                 </li>
               </ul>
             </div>
@@ -252,9 +276,11 @@
   <section class="why-us" id="whyus">
 
     <div class="container">
-      <div class="col" style="font-size: 38px; padding-top: 100px; font-weight: bold; padding-bottom: 50px;">Why Us?
-      </div>
-      <div class="col" style="font-size: 18px; padding-bottom: 50px;">
+      <!-- <div class="col" style="font-size: 38px; padding-top: 100px; font-weight: bold; padding-bottom: 50px;">Why Us? -->
+      <!-- </div> -->
+      <div class="col section-title">Why Us?</div>
+
+      <div class="col section-subtitle">
         ComposeNFT is the first Music NFT platform built on Etherueum’s Layer 2 Zk-Rollup technology, powerered by
         ZkSync. This ensures that artists can mint their songs as NFTs with low gas fees.
         <br></br>
@@ -263,60 +289,68 @@
         legally.
 
       </div>
-      <img src="img/chart_lato.png" style="max-width: 100%;
+      <img src="img/chart_lato.png" style=" max-width: 100%;
       max-height: 100vh;
       margin: auto;">
 
 
   </section>
   <section class="faq-page" id="faq">
-    <div class="container" style="font-size:30px; padding-top: 150px; "">
+    <div class="container">
 
-      <div style=" font-size: 38px; padding-bottom: 70px;">FAQs</div>
-    <div id="question_1" class="collapsible-group">
-      <button type="button" class="collapsible">How do I sign up? 
-        <img class="plus-button" src="img/plus_button.png">
-      </button>
+      <!-- <div style=" font-size: 38px; padding-bottom: 70px;">FAQs</div> -->
+      <div class="section-title">FAQs</div>
+      <div id="question_1" class="collapsible-group">
+        <button type="button" class="collapsible" style="display:flex; flex-direction:row; align-items: center;">
+          <!-- <p style="margin-top: auto;" style="font-size:15px">How do I sign up? </p> -->
+          How do I sign up?
+          <img class="plus-button" src="img/plus_button.png">
+        </button>
 
-      <div class="content">
-        <p>You can sign up for our newsletter and early access beta by entering your email above. Once we launch our official platform you will receive an email prompting you to create an account. </p>
+        <div class="content">
+          <p>You can sign up for our newsletter and early access beta by entering your email above. Once we launch our
+            official platform you will receive an email prompting you to create an account. </p>
+        </div>
       </div>
-    </div>
-    <div id="question_2" class="collapsible-group">
-      <button type="button" class="collapsible">What are the benefits of converting my music into NFTS? 
-        <img class="plus-button" src="img/plus_button.png">
-      </button>
-      <div class="content">
-        <p>While the benefits of converting your work into NFTs are endless, NFTs have the potential to ensure that musicians are more fairly compensated for their work. How much your music is worth is really decided by your fans. </p>
+      <div id="question_2" class="collapsible-group">
+        <button type="button" class="collapsible">What are the benefits of converting my music into NFTS?
+          <img class="plus-button" src="img/plus_button.png">
+        </button>
+        <div class="content">
+          <p>While the benefits of converting your work into NFTs are endless, NFTs have the potential to ensure that
+            musicians are more fairly compensated for their work. How much your music is worth is really decided by your
+            fans. </p>
+        </div>
       </div>
-    </div>
-    <div id="question_3" class="collapsible-group">
-      <button type="button" class="collapsible">What features will be available when ComposeNFT launches? 
-        <img class="plus-button" src="img/plus_button.png">
+      <div id="question_3" class="collapsible-group">
+        <button type="button" class="collapsible">What features will be available when ComposeNFT launches?
+          <img class="plus-button" src="img/plus_button.png">
 
-      </button>
-      <div class="content">
-        <p>Our NFT engine, License Hub and Marketplace will be available with our V.1 launch.</p>
+        </button>
+        <div class="content">
+          <p>Our NFT engine, License Hub and Marketplace will be available with our V.1 launch.</p>
+        </div>
       </div>
-    </div>
-    <div id="question_4" class="collapsible-group">
-      <button type="button" class="collapsible">What wallets will ComposeNFT support
-        
-        <img class="plus-button" src="img/plus_button.png">
-      </button>
-      <div class="content">
-        <p>With our V.1 launch the ComposeNFT platform will support both Coinbase and MetaMask wallets. We plan to expand wallet compatibility in the future. </p>
-      </div>
-    </div>
-    <div id="question_5" class="collapsible-group" style="padding-bottom: 200px;">
-      <button type="button" class="collapsible">How can I stay up to date with ComposeNFT announcements?
+      <div id="question_4" class="collapsible-group">
+        <button type="button" class="collapsible">What wallets will ComposeNFT support
 
-        <img class="plus-button" src="img/plus_button.png">
-         </button>
-      <div class="content">
-        <p>You can start by signing up for our newsletter. In addition you can join our discord group, where you can interact directly with our founders. Lastly you can follow us on Instagram and Twitter! </p>
+          <img class="plus-button" src="img/plus_button.png">
+        </button>
+        <div class="content">
+          <p>With our V.1 launch the ComposeNFT platform will support both Coinbase and MetaMask wallets. We plan to
+            expand wallet compatibility in the future. </p>
+        </div>
       </div>
-    </div>
+      <div id="question_5" class="collapsible-group" style="padding-bottom: 200px;">
+        <button type="button" class="collapsible">How can I stay up to date with ComposeNFT announcements?
+
+          <img class="plus-button" src="img/plus_button.png">
+        </button>
+        <div class="content">
+          <p>You can start by signing up for our newsletter. In addition you can join our discord group, where you can
+            interact directly with our founders. Lastly you can follow us on Instagram and Twitter! </p>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -324,12 +358,14 @@
       var coll = document.getElementsByClassName("collapsible");
       var i;
 
-      console.log("coll length is: ", coll.length)
       for (i = 0; i < coll.length; i++) {
         coll[i].addEventListener("click", function () {
           this.classList.toggle("active");
+
           var content = this.nextElementSibling;
+
           if (content.style.display === "block") {
+            this.style.background = "img/faq_rectangle_without_plus.png";
             content.style.display = "none";
           } else {
             content.style.display = "block";
@@ -355,7 +391,8 @@
             <!-- <p style="font-size: 20px">About Us</p> -->
             <div class="text-left p-2" style="font-size:20px">About Us</div>
             <div class="text-left p-2">
-              At ComposeNFT we are reimagining the way music is shared, created and consumed using web3. Our goal is to empower the common musician and their fan bases around the globe. 
+              At ComposeNFT we are reimagining the way music is shared, created and consumed on Web3. Our goal is to
+              empower the common musician and their fan bases around the globe.
             </div>
 
           </div>
